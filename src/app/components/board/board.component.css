@@ -1,0 +1,39 @@
+
+.heading{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+table{
+    margin: auto;
+}
+
+/* table tr td{
+    border: 1px solid #e2e2e2;
+    padding: 20px;
+} */
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin: 10px 10px;
+}
+
+.button-container button{
+    background-color: rgb(53, 53, 255);
+    padding: 10px;
+    color: white;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+
+
+.green{
+    background-color: rgb(51, 222, 51);
+    color: black;
+}
+
+.red{
+    background-color: red; 
+    color: black;
+}

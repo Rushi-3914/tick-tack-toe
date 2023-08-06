@@ -1,0 +1,67 @@
+<div class="board-container">
+    <h1 class="heading">Tic Tac Toe Game.</h1>
+    <table>
+        <tr>
+            <td (click)="gameService.changeGameState(0)">
+                <app-position-text [textValue]="gameService.gameState[0]"></app-position-text>
+            </td>
+            <td (click)="gameService.changeGameState(1)">
+                <app-position-text [textValue]="gameService.gameState[1]"></app-position-text>
+            </td>
+            <td (click)="gameService.changeGameState(2)">
+                <app-position-text [textValue]="gameService.gameState[2]"></app-position-text>
+            </td>
+        </tr>
+        <tr>
+            <td (click)="gameService.changeGameState(3)">
+                <app-position-text [textValue]="gameService.gameState[3]"></app-position-text>
+            </td>
+            <td (click)="gameService.changeGameState(4)">
+                <app-position-text [textValue]="gameService.gameState[4]"></app-position-text>
+            
+            </td>
+            <td (click)="gameService.changeGameState(5)">
+                <app-position-text [textValue]="gameService.gameState[5]"></app-position-text>
+
+            </td>
+        </tr>
+        <tr>
+            <td (click)="gameService.changeGameState(6)">
+                <app-position-text [textValue]="gameService.gameState[6]"></app-position-text>
+            </td>
+            <td (click)="gameService.changeGameState(7)">
+                <app-position-text [textValue]="gameService.gameState[7]"></app-position-text>
+            </td>
+            <td (click)="gameService.changeGameState(8)">
+                <app-position-text [textValue]="gameService.gameState[8]"></app-position-text>
+            </td>
+        </tr>
+    </table>
+
+    <h1 style="color: white;" [ngClass]="{'green':gameService.chance==1,'red':gameService.chance==0}" class="heading" *ngIf="!gameService.gameOver">
+        Player {{gameService.chance}}'chance
+     </h1>
+<!-- 
+     <h1 style="color: white;" [ngClass]="{'green':gameService.winner==1,'red':gameService.winner==0}" class="heading" *ngIf="!gameService.gameOver">
+        Player {{gameService.chance}}'chance
+     </h1> -->
+
+    <h1 style="color: white;" [ngClass]="{'green':gameService.winner==1,'red':gameService.winner==0}" class="heading" *ngIf="gameService.gameOver&&!gameService.gameDraw">
+       Player {{gameService.winner}} Won The Gmae
+    </h1>
+
+    <h1 class="heading" *ngIf="gameService.gameOver && gameService.gameDraw">
+        Match Draw
+     </h1>
+ 
+
+    <div class="button-container" *ngIf="gameService.gameOver">
+        <button [disabled]="!gameService.gameOver" (click)="gameService.restartGame()">Restsrt The Game</button>
+    </div>
+    
+</div>
+
+<!-- {{gameService.gameState | json}} -->
+<div class="heading">
+    <p>Desgined and developed by Rushikesh Navale</p>
+</div>
